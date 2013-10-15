@@ -1,0 +1,6 @@
+<?php
+
+$s_plugin_ServiceLevel_link = "Evaluation";
+$s_plugin_ServiceLevel_title = "Evaluation";
+
+$s_plugin_ServiceLevel_scrc = '(submitted/confirmed/resolved/closed)';
