@@ -320,7 +320,7 @@ function evaluation_print_by_project( $p_projects = null, $p_level = 0, $p_cache
 		if ( count( project_hierarchy_get_subprojects ( $t_project ) ) > 0 ) {
 			$t_subprojects = current_user_get_accessible_subprojects( $t_project );
 			$total_sum = $stat_row;
-			evaluation_helper_summarize_all_sub_projects($t_project, $p_cache, &$total_sum);
+			evaluation_helper_summarize_all_sub_projects($t_project, $p_cache, $total_sum);
 
 			// total sum
 			evaluation_helper_print_row( "<b>".$t_name."</b>", $total_sum["submitted"] , $total_sum["confirmed"],
@@ -357,7 +357,7 @@ function evaluation_helper_summarize_all_sub_projects($t_project, $p_cache, &$to
 
 #				echo "total sum"; var_dump($total_sum); echo "<br>";
 				// dive into recursion to add sub-sub-projects ...
-				evaluation_helper_summarize_all_sub_projects( $subproj, $p_cache, &$total_sum );
+				evaluation_helper_summarize_all_sub_projects( $subproj, $p_cache, $total_sum );
 		}
 	}
 }
